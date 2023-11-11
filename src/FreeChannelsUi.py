@@ -15,16 +15,17 @@ from Screens.Screen import Screen
 from . import _
 
 
+CHOUICES = [(True, _("add")), (False, _("ignore")), ("top", _("top of the list"))]
+FREE_BOUQUET_REF = eServiceReference('1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.freechannels.tv" ORDER BY bouquet')
+
+
 config.plugins.FreeChannels = ConfigSubsection()
 config.plugins.FreeChannels.delay = ConfigInteger(default=4, limits=(1, 20))
 config.plugins.FreeChannels.allchannels = ConfigYesNo(default=True)
-config.plugins.FreeChannels.language1 = ConfigSelection(default="top", choices=[(True, _("add")), (False, _("ignore")), ("top", _("top of the list"))])
-config.plugins.FreeChannels.language2 = ConfigSelection(default="top", choices=[(True, _("add")), (False, _("ignore")), ("top", _("top of the list"))])
-config.plugins.FreeChannels.language3 = ConfigSelection(default=True, choices=[(True, _("add")), (False, _("ignore")), ("top", _("top of the list"))])
-config.plugins.FreeChannels.language4 = ConfigSelection(default=True, choices=[(True, _("add")), (False, _("ignore")), ("top", _("top of the list"))])
-
-
-FREE_BOUQUET_REF = eServiceReference('1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.freechannels.tv" ORDER BY bouquet')
+config.plugins.FreeChannels.language1 = ConfigSelection(default="top", choices=CHOUICES)
+config.plugins.FreeChannels.language2 = ConfigSelection(default="top", choices=CHOUICES)
+config.plugins.FreeChannels.language3 = ConfigSelection(default=True, choices=CHOUICES)
+config.plugins.FreeChannels.language4 = ConfigSelection(default=True, choices=CHOUICES)
 
 
 class FreeChannelsMain(ChannelSelectionBase):
@@ -142,10 +143,7 @@ class FreeChannelsMain(ChannelSelectionBase):
 					services.append((name, service))
 		if "ORDER BY bouquet" not in ref.toString():
 			services.sort(key=lambda x: x[0])
-		services_sorted = []
-		for s in services:
-			services_sorted.append(s[1])
-		return services_sorted
+		return [s[1] for s in services]
 
 	def get_services_list(self):
 		services = self.get_services(self.cur_root)
@@ -385,28 +383,31 @@ class FreeChannelsSetup(ConfigListScreen, Screen):
 					return lang_choices[lang]
 				return lang
 
+			SETTINGS = _("Channels in %s")
+			DESCRIPTION = _("You can add channels that contain the specified language to the top of the list, to the bottom of the list, or ignore and not add to the list.\nYou can specify the language in the auto language selection settings.")
+
 			if config.autolanguage.audio_autoselect1.value:
 				config_list.append((
-					_("Channels in %s") % get_lang(config.autolanguage.audio_autoselect1),
+					SETTINGS % get_lang(config.autolanguage.audio_autoselect1),
 					config.plugins.FreeChannels.language1,
-					_("You can add channels that contain the specified language to the top of the list, to the bottom of the list, or ignore and not add to the list.\nYou can specify the language in the auto language selection settings.")
+					DESCRIPTION
 				))
 			if config.autolanguage.audio_autoselect2.value:
 				config_list.append((
-					_("Channels in %s") % get_lang(config.autolanguage.audio_autoselect2),
+					SETTINGS % get_lang(config.autolanguage.audio_autoselect2),
 					config.plugins.FreeChannels.language2,
-					_("You can add channels that contain the specified language to the top of the list, to the bottom of the list, or ignore and not add to the list.\nYou can specify the language in the auto language selection settings.")
+					DESCRIPTION
 				))
 			if config.autolanguage.audio_autoselect3.value:
 				config_list.append((
-					_("Channels in %s") % get_lang(config.autolanguage.audio_autoselect3),
+					SETTINGS % get_lang(config.autolanguage.audio_autoselect3),
 					config.plugins.FreeChannels.language3,
-					_("You can add channels that contain the specified language to the top of the list, to the bottom of the list, or ignore and not add to the list.\nYou can specify the language in the auto language selection settings.")
+					DESCRIPTION
 				))
 			if config.autolanguage.audio_autoselect4.value:
 				config_list.append((
-					_("Channels in %s") % get_lang(config.autolanguage.audio_autoselect4),
+					SETTINGS % get_lang(config.autolanguage.audio_autoselect4),
 					config.plugins.FreeChannels.language4,
-					_("You can add channels that contain the specified language to the top of the list, to the bottom of the list, or ignore and not add to the list.\nYou can specify the language in the auto language selection settings.")
+					DESCRIPTION
 				))
 		self["config"].list = config_list
