@@ -16,10 +16,14 @@ You can specify the languages in the image auto language selection settings.
 
 Plugin embedded skin uses scaling and svg, therefore will work on OpenPLi images starting from version 8.1.
 
+[Example of BitBake file](https://github.com/OpenPLi/openpli-oe-core/blob/develop/meta-openpli/recipes-openpli/enigma2-plugins/enigma2-plugin-extensions-freechannels.bb)
+
 
 Download
 -------
-[Plugin releases](https://github.com/Taapat/enigma2-plugin-freechannels/releases)
+Packages with py3 in the version name are for Python 3, with py2 for Python 2.
+
+[Plugin Free channels releases](https://github.com/Taapat/enigma2-plugin-freechannels/releases)
 
 Screenshots
 -------
