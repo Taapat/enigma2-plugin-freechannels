@@ -16,7 +16,7 @@ def compile_translate():
 				os.makedirs(destdir)
 			dest = os.path.join(destdir, "FreeChannels.mo")
 			print("Language compile %s -> %s" % (src, dest))
-			if os.system("msgfmt "%s" -o "%s"" % (src, dest)) != 0:
+			if os.system("msgfmt '%s' -o '%s'" % (src, dest)) != 0:
 				raise RuntimeError("Failed to compile", src)
 
 
