@@ -21,9 +21,9 @@ Plugin embedded skin uses scaling and svg, therefore will work on OpenPLi images
 
 Download
 -------
-Packages with py3 in the version name are for Python 3, with py2 for Python 2.
+Packages with py3 in the version name are for Python3, with py2 for Python2.
 
-[Plugin Free channels releases](https://github.com/Taapat/enigma2-plugin-freechannels/releases/latest)
+[Plugin Free channels latest release](https://github.com/Taapat/enigma2-plugin-freechannels/releases/latest)
 
 Screenshots
 -------
