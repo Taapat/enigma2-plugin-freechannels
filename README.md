@@ -23,7 +23,7 @@ Download
 -------
 Packages with py3 in the version name are for Python 3, with py2 for Python 2.
 
-[Plugin Free channels releases](https://github.com/Taapat/enigma2-plugin-freechannels/releases)
+[Plugin Free channels releases](https://github.com/Taapat/enigma2-plugin-freechannels/releases/latest)
 
 Screenshots
 -------
