@@ -117,7 +117,7 @@ jobs:
       - name: Build Python 2 control package
         working-directory: './deploy/control'
         run: |
-          sed -i 's/Version: py3+/Version: py2+/' control
+          sed -i 's/Version: py3-/Version: py2-/' control
           sed -i 's/python3-/python-/g' control
           tar --numeric-owner --group=0 --owner=0 -czf ../control.tar.gz ./*
       - name: Build Python 2 ipk package
