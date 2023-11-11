@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 14:00+0200\n"
+"POT-Creation-Date: 2023-11-11 14:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -198,7 +198,7 @@ msgid "Save"
 msgstr ""
 
 #: src/plugin.py:14
-msgid "Scan bouquets to find free channels and add to the bouquet if it contains the specified language."
+msgid "Scan bouquets to find free channels"
 msgstr ""
 
 #: src/FreeChannelsUi.py:171
