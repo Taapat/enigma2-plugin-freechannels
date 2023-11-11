@@ -15,17 +15,17 @@ from Screens.Screen import Screen
 from . import _
 
 
-CHOUICES = [(True, _("add")), (False, _("ignore")), ("top", _("top of the list"))]
+CHOICES = [(True, _("add")), (False, _("ignore")), ("top", _("top of the list"))]
 FREE_BOUQUET_REF = eServiceReference('1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "userbouquet.freechannels.tv" ORDER BY bouquet')
 
 
 config.plugins.FreeChannels = ConfigSubsection()
 config.plugins.FreeChannels.delay = ConfigInteger(default=4, limits=(1, 20))
 config.plugins.FreeChannels.allchannels = ConfigYesNo(default=True)
-config.plugins.FreeChannels.language1 = ConfigSelection(default="top", choices=CHOUICES)
-config.plugins.FreeChannels.language2 = ConfigSelection(default="top", choices=CHOUICES)
-config.plugins.FreeChannels.language3 = ConfigSelection(default=True, choices=CHOUICES)
-config.plugins.FreeChannels.language4 = ConfigSelection(default=True, choices=CHOUICES)
+config.plugins.FreeChannels.language1 = ConfigSelection(default="top", choices=CHOICES)
+config.plugins.FreeChannels.language2 = ConfigSelection(default="top", choices=CHOICES)
+config.plugins.FreeChannels.language3 = ConfigSelection(default=True, choices=CHOICES)
+config.plugins.FreeChannels.language4 = ConfigSelection(default=True, choices=CHOICES)
 
 
 class FreeChannelsMain(ChannelSelectionBase):
