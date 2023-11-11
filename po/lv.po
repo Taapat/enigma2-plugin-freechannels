@@ -1,0 +1,218 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FreeChannels-1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-11 14:00+0200\n"
+"PO-Revision-Date: 2015-06-25 00:44+0300\n"
+"Last-Translator: Tapat <taapat@gmail.com>\n"
+"Language-Team: Taapat <taapat@gmail.com>\n"
+"Language: lv_LV\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+
+#, python-format
+msgid "%d of %d"
+msgstr "%d no %d"
+
+msgid ", no audio"
+msgstr ", nav audio"
+
+msgid "Add channels in any language"
+msgstr "Pievieno kanālus jebkurā valodā"
+
+msgid "Adds all channels to the list regardless of the languages in which they are available."
+msgstr "Pievieno visus kanālus sarakstam, neatkarīgi no valodām, kurās tie ir pieejami."
+
+msgid "Arabic"
+msgstr "arābu"
+
+msgid "Basque"
+msgstr "basku"
+
+msgid "Bulgarian"
+msgstr "bulgāru"
+
+msgid "Cancel"
+msgstr "Atcelt"
+
+msgid "Channel tuning time"
+msgstr "Kanāla noskaņošanas laiks"
+
+#, python-format
+msgid "Channels in %s"
+msgstr "Kanālus %s valodā"
+
+msgid "Chinese - Simplified"
+msgstr "ķīniešu - vienkāršotā"
+
+msgid "Chinese - Traditional"
+msgstr "ķīniešu - tradicionālā"
+
+msgid "Choose where to search for free channels"
+msgstr "Izvēlieties, kur meklēt bezmaksas kanālus"
+
+msgid "Croatian"
+msgstr "horvātu"
+
+msgid "Crypted"
+msgstr "Kodēts"
+
+msgid "Czech"
+msgstr "čehu"
+
+msgid "Danish"
+msgstr "dāņu"
+
+msgid "Delete all existing channels from the free channel bouquet before searching?"
+msgstr "Dzēst visus esošos kanālus no bezmaksas kanālu buķetes pirms meklēšanas?"
+
+msgid "Dutch"
+msgstr "holandiešu"
+
+msgid "English"
+msgstr "angļu"
+
+msgid "Estonian"
+msgstr "igauņu"
+
+msgid "Exit"
+msgstr "Iziet"
+
+msgid "Find free channels"
+msgstr "Meklēt bezmaksas kanālus"
+
+msgid "Finnish"
+msgstr "somu"
+
+msgid "Free"
+msgstr "Bezmaksas"
+
+#. TRANSLATORS: Bouquet name in channel list
+msgid "Free channels"
+msgstr "Bezmaksas kanāli"
+
+msgid "French"
+msgstr "franču"
+
+msgid "German"
+msgstr "vācu"
+
+msgid "Greek"
+msgstr "grieķu"
+
+msgid "Hebrew"
+msgstr "ebreju"
+
+msgid "Hungarian"
+msgstr "ungāru"
+
+msgid "Indonesian"
+msgstr "indonēziešu"
+
+msgid "Italian"
+msgstr "itāļu"
+
+msgid "Latvian"
+msgstr "latviešu"
+
+msgid "Lithuanian"
+msgstr "lietuviešu"
+
+msgid "Luxembourgish"
+msgstr "luksemburgas"
+
+msgid "Norwegian"
+msgstr "norvēģu"
+
+msgid "Original"
+msgstr "oriģinālajā"
+
+msgid "Persian"
+msgstr "persiešu"
+
+msgid "Polish"
+msgstr "poļu"
+
+msgid "Portuguese"
+msgstr "portugāļu"
+
+msgid "Romanian"
+msgstr "rumāņu"
+
+msgid "Russian"
+msgstr "krievu"
+
+msgid "Save"
+msgstr "Saglabāt"
+
+msgid "Scan bouquets to find free channels and add to the bouquet if it contains the specified language."
+msgstr ""
+
+msgid "Search complete"
+msgstr "Meklēšana pabeigta"
+
+msgid "Search for free channels"
+msgstr "Meklēt bezmaksas kanālus"
+
+msgid "Serbian"
+msgstr "serbu"
+
+msgid "Setup"
+msgstr "Iestatījumi"
+
+msgid "Slovak"
+msgstr "slovāku"
+
+msgid "Slovenian"
+msgstr "slovēņu"
+
+msgid "Spanish"
+msgstr "spāņu"
+
+msgid "Start searching for free channels in this bouquet?"
+msgstr "Sākt meklēt bezmaksas kanālus šajā buķetē?"
+
+msgid "Stop search?"
+msgstr "Pārtraukt meklēšanu?"
+
+msgid "Swedish"
+msgstr "zviedru"
+
+msgid "Thai"
+msgstr "taiešu"
+
+msgid ""
+"Time in seconds to tune to a channel.\n"
+"If the time is shorter, the channel search will be faster, but the information will not be correct."
+msgstr ""
+"Laiks sekundēs, lai noskaņotu kanālu.\n"
+"Ja laiks būs īsāks, kanālu meklēšana būs ātrāka, bet informācija var nebūt pareiza."
+
+msgid "Turkish"
+msgstr "turku"
+
+msgid "Ukrainian"
+msgstr "ukraiņu"
+
+msgid "Visually impaired"
+msgstr "redzes traucējumu celiņa"
+
+msgid ""
+"You can add channels that contain the specified language to the top of the list, to the bottom of the list, or ignore and not add to the list.\n"
+"You can specify the language in the auto language selection settings."
+msgstr ""
+"Varat pievienot kanālus, kuros ir norādītā valoda, saraksta augšpusē, saraksta apakšā vai ignorēt un nepievienot sarakstam.\n"
+"Valodu var norādīt automātiskās valodas izvēles iestatījumos."
+
+msgid "add"
+msgstr "pievienot"
+
+msgid "ignore"
+msgstr "ignorēt"
+
+msgid "top of the list"
+msgstr "saraksta augšā"

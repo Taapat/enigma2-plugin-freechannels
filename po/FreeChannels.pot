@@ -1,0 +1,286 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-11 14:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/FreeChannelsUi.py:166
+#, python-format
+msgid "%d of %d"
+msgstr ""
+
+#: src/FreeChannelsUi.py:231
+msgid ", no audio"
+msgstr ""
+
+#: src/FreeChannelsUi.py:337
+msgid "Add channels in any language"
+msgstr ""
+
+#: src/FreeChannelsUi.py:338
+msgid "Adds all channels to the list regardless of the languages in which they are available."
+msgstr ""
+
+#: src/FreeChannelsUi.py:343
+msgid "Arabic"
+msgstr ""
+
+#: src/FreeChannelsUi.py:344
+msgid "Basque"
+msgstr ""
+
+#: src/FreeChannelsUi.py:345
+msgid "Bulgarian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:319
+msgid "Cancel"
+msgstr ""
+
+#: src/FreeChannelsUi.py:335
+msgid "Channel tuning time"
+msgstr ""
+
+#: src/FreeChannelsUi.py:390 src/FreeChannelsUi.py:396
+#: src/FreeChannelsUi.py:402 src/FreeChannelsUi.py:408
+#, python-format
+msgid "Channels in %s"
+msgstr ""
+
+#: src/FreeChannelsUi.py:347
+msgid "Chinese - Simplified"
+msgstr ""
+
+#: src/FreeChannelsUi.py:348
+msgid "Chinese - Traditional"
+msgstr ""
+
+#: src/FreeChannelsUi.py:55
+msgid "Choose where to search for free channels"
+msgstr ""
+
+#: src/FreeChannelsUi.py:346
+msgid "Croatian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:223
+msgid "Crypted"
+msgstr ""
+
+#: src/FreeChannelsUi.py:349
+msgid "Czech"
+msgstr ""
+
+#: src/FreeChannelsUi.py:350
+msgid "Danish"
+msgstr ""
+
+#: src/FreeChannelsUi.py:279
+msgid "Delete all existing channels from the free channel bouquet before searching?"
+msgstr ""
+
+#: src/FreeChannelsUi.py:351
+msgid "Dutch"
+msgstr ""
+
+#: src/FreeChannelsUi.py:352
+msgid "English"
+msgstr ""
+
+#: src/FreeChannelsUi.py:353
+msgid "Estonian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:273
+msgid "Exit"
+msgstr ""
+
+#: src/plugin.py:13
+msgid "Find free channels"
+msgstr ""
+
+#: src/FreeChannelsUi.py:354
+msgid "Finnish"
+msgstr ""
+
+#: src/FreeChannelsUi.py:223 src/FreeChannelsUi.py:237
+msgid "Free"
+msgstr ""
+
+#. TRANSLATORS: Bouquet name in channel list
+#: src/FreeChannelsUi.py:292
+msgid "Free channels"
+msgstr ""
+
+#: src/FreeChannelsUi.py:355
+msgid "French"
+msgstr ""
+
+#: src/FreeChannelsUi.py:356
+msgid "German"
+msgstr ""
+
+#: src/FreeChannelsUi.py:357
+msgid "Greek"
+msgstr ""
+
+#: src/FreeChannelsUi.py:358
+msgid "Hebrew"
+msgstr ""
+
+#: src/FreeChannelsUi.py:359
+msgid "Hungarian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:360
+msgid "Indonesian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:361
+msgid "Italian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:362
+msgid "Latvian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:363
+msgid "Lithuanian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:364
+msgid "Luxembourgish"
+msgstr ""
+
+#: src/FreeChannelsUi.py:365
+msgid "Norwegian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:342
+msgid "Original"
+msgstr ""
+
+#: src/FreeChannelsUi.py:366
+msgid "Persian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:367
+msgid "Polish"
+msgstr ""
+
+#: src/FreeChannelsUi.py:368
+msgid "Portuguese"
+msgstr ""
+
+#: src/FreeChannelsUi.py:369
+msgid "Romanian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:370
+msgid "Russian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:320
+msgid "Save"
+msgstr ""
+
+#: src/plugin.py:14
+msgid "Scan bouquets to find free channels and add to the bouquet if it contains the specified language."
+msgstr ""
+
+#: src/FreeChannelsUi.py:171
+msgid "Search complete"
+msgstr ""
+
+#: src/FreeChannelsUi.py:272
+msgid "Search for free channels"
+msgstr ""
+
+#: src/FreeChannelsUi.py:371
+msgid "Serbian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:316
+msgid "Setup"
+msgstr ""
+
+#: src/FreeChannelsUi.py:372
+msgid "Slovak"
+msgstr ""
+
+#: src/FreeChannelsUi.py:373
+msgid "Slovenian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:374
+msgid "Spanish"
+msgstr ""
+
+#: src/FreeChannelsUi.py:263
+msgid "Start searching for free channels in this bouquet?"
+msgstr ""
+
+#: src/FreeChannelsUi.py:115
+msgid "Stop search?"
+msgstr ""
+
+#: src/FreeChannelsUi.py:375
+msgid "Swedish"
+msgstr ""
+
+#: src/FreeChannelsUi.py:376
+msgid "Thai"
+msgstr ""
+
+#: src/FreeChannelsUi.py:336
+msgid ""
+"Time in seconds to tune to a channel.\n"
+"If the time is shorter, the channel search will be faster, but the information will not be correct."
+msgstr ""
+
+#: src/FreeChannelsUi.py:377
+msgid "Turkish"
+msgstr ""
+
+#: src/FreeChannelsUi.py:378
+msgid "Ukrainian"
+msgstr ""
+
+#: src/FreeChannelsUi.py:379
+msgid "Visually impaired"
+msgstr ""
+
+#: src/FreeChannelsUi.py:392 src/FreeChannelsUi.py:398
+#: src/FreeChannelsUi.py:404 src/FreeChannelsUi.py:410
+msgid ""
+"You can add channels that contain the specified language to the top of the list, to the bottom of the list, or ignore and not add to the list.\n"
+"You can specify the language in the auto language selection settings."
+msgstr ""
+
+#: src/FreeChannelsUi.py:21 src/FreeChannelsUi.py:22 src/FreeChannelsUi.py:23
+#: src/FreeChannelsUi.py:24
+msgid "add"
+msgstr ""
+
+#: src/FreeChannelsUi.py:21 src/FreeChannelsUi.py:22 src/FreeChannelsUi.py:23
+#: src/FreeChannelsUi.py:24
+msgid "ignore"
+msgstr ""
+
+#: src/FreeChannelsUi.py:21 src/FreeChannelsUi.py:22 src/FreeChannelsUi.py:23
+#: src/FreeChannelsUi.py:24
+msgid "top of the list"
+msgstr ""
