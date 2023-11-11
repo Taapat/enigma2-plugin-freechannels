@@ -1,0 +1,136 @@
+name: build
+
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+
+jobs:
+  test-python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['2.7', '3.11']
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set up Python 3
+        if: matrix.python-version != '2.7'
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Upgrade Python 3 pip
+        if: matrix.python-version != '2.7'
+        run: |
+          python -m pip install --upgrade pip
+      - name: Set up Python 2
+        if: matrix.python-version == '2.7'
+        run: |
+          sudo apt install -y python2
+          sudo ln -sf /usr/bin/python2 /usr/bin/python
+          curl -L -O "https://bootstrap.pypa.io/pip/2.7/get-pip.py"
+          python get-pip.py
+      - name: Install dependencies
+        run: |
+          pip install flake8
+      - name: Compile sources
+        run: |
+          python -O -m compileall ./src/
+      - name: Check code with flake8
+        run: |
+          flake8 --ignore=E501,W191 --show-source
+  test-language:
+    needs: test-python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: |
+          sudo apt-get install gettext
+      - name: Compile language files
+        run: |
+          for i in $(ls -1 ./po/*.po); do $(msgfmt "$i" -o "$i".mo); done
+  deploy:
+    needs: test-language
+    if: github.event_name == 'push' && !contains(github.event.head_commit.message,'skip-release') && github.repository == 'Taapat/enigma2-plugin-freechannels' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Set up Python 2
+        run: |
+          sudo apt install -y python2
+      - name: Install dependencies
+        run: |
+          sudo apt install gettext
+      - name: Build sources
+        run: |
+          python setup.py build --build-lib=build/lib
+      - name: Set git variables
+        run: |
+          echo "SRCPV=git$(git rev-list --count HEAD)" >> $GITHUB_ENV
+          echo "PKGV=-git$(git rev-list --count HEAD)-${GITHUB_SHA::7}-r0.0" >> $GITHUB_ENV
+          echo "COMMIT_SUBJECT=$(git log -1 --pretty=format:%s)" >> $GITHUB_ENV
+      - name: Create plugin package files
+        run: |
+          mkdir -p deploy/data/usr/lib/enigma2/python/Plugins
+          cp -r build/lib/* deploy/data/usr/lib/enigma2/python/Plugins
+          sed -i 's/Version:/Version: py3${{ env.PKGV }}/' deploy/control/control
+          mkdir ipk
+      - name: Compile Python 3 sources
+        run: |
+          python3 -m compileall -b deploy/data/usr/lib/enigma2/python/Plugins/Extensions/FreeChannels/
+      - name: Build Python 3 data package
+        working-directory: './deploy/data'
+        run: |
+          tar --numeric-owner --group=0 --owner=0 -czf ../data.tar.gz ./*
+      - name: Build Python 3 control package
+        working-directory: './deploy/control'
+        run: |
+          tar --numeric-owner --group=0 --owner=0 -czf ../control.tar.gz ./*
+      - name: Build Python 3 ipk package
+        working-directory: './deploy'
+        run: |
+          echo 2.0 > debian-binary
+          ar rv ../ipk/enigma2-plugin-extensions-freechannels_py3${{ env.PKGV }}.ipk debian-binary data.tar.gz control.tar.gz
+      - name: Delete compiled Python 3 files
+        run: |
+          rm deploy/data/usr/lib/enigma2/python/Plugins/Extensions/FreeChannels/*.pyc
+      - name: Compile Python 2 sources
+        run: |
+          python2 -O -m compileall deploy/data/usr/lib/enigma2/python/Plugins/Extensions/FreeChannels/
+      - name: Build Python 2 data package
+        working-directory: './deploy/data'
+        run: |
+          tar --numeric-owner --group=0 --owner=0 -czf ../data.tar.gz ./*
+      - name: Build Python 2 control package
+        working-directory: './deploy/control'
+        run: |
+          sed -i 's/Version: py3+/Version: py2+/' control
+          sed -i 's/python3-/python-/g' control
+          tar --numeric-owner --group=0 --owner=0 -czf ../control.tar.gz ./*
+      - name: Build Python 2 ipk package
+        working-directory: './deploy'
+        run: |
+          ar rv ../ipk/enigma2-plugin-extensions-freechannels_py2${{ env.PKGV }}.ipk debian-binary data.tar.gz control.tar.gz
+      - name: Create release
+        uses: Taapat/github-release@v2.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ env.SRCPV }}
+          name: ${{ env.COMMIT_SUBJECT }}
+          gzip: false
+          files: >
+            ipk/enigma2-plugin-extensions-freechannels_py2${{ env.PKGV }}.ipk
+            ipk/enigma2-plugin-extensions-freechannels_py3${{ env.PKGV }}.ipk

@@ -1,0 +1,10 @@
+Package: enigma2-plugin-extensions-freechannels
+Version:
+Description: Scan bouquets to find free channels and add to the bouquet if it contains the specified language.
+Section: base
+Priority: optional
+Maintainer: Taapat
+License: GPLv3
+Architecture: all
+OE: enigma2-plugin-extensions-freechannels
+Homepage: https://github.com/Taapat/enigma2-plugin-freechannels
