@@ -32,7 +32,7 @@ class FreeChannelsMain(ChannelSelectionBase):
 	skin = """<screen position="center,center" size="655*f,470*f">
 			<widget source="service" render="Label" position="15*f,10*f" size="625*f,30*f" font="Regular;25*f"/>
 			<widget source="scanned_service" render="Label" position="15*f,50*f" size="625*f,30*f" font="Regular;25*f"/>
-			<widget name="scan_progress" position="15*f,90*f" size="625*f,20*f"/>
+			<widget name="scan_progress" position="15*f,90*f" size="625*f,20*f" borderWidth="1"/>
 			<widget name="list" position="15*f,120*f" size="625*f,280*f" enableWrapAround="1" scrollbarMode="showOnDemand" serviceItemHeight="28*f" serviceNameFont="Regular;22*f" serviceNumberFont="Regular;20*f" serviceInfoFont="Regular;15*f"/>
 			<ePixmap position="15*f,415*f" size="140*f,40*f" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="blend"/>
 			<widget source="key_red" render="Label" position="15*f,415*f" zPosition="2" size="140*f,40*f" valign="center" halign="center" font="Regular;20*f" transparent="1"/>
@@ -56,6 +56,7 @@ class FreeChannelsMain(ChannelSelectionBase):
 		self["service"] = StaticText(_("Choose where to search for free channels"))
 		self["scanned_service"] = StaticText()
 		self["scan_progress"] = ProgressBar()
+		self["scan_progress"].hide()
 		key_text = self["key_red"].text
 		self["key_red"] = StaticText(key_text)
 		key_text = self["key_green"].text
@@ -149,6 +150,7 @@ class FreeChannelsMain(ChannelSelectionBase):
 		services = self.get_services(self.cur_root)
 		self.services_count = len(services)
 		self["scan_progress"].range = (0, self.services_count)
+		self["scan_progress"].show()
 		services.append(None)  # Marks the end of the list
 		i = 0
 		for service in services:
@@ -168,6 +170,7 @@ class FreeChannelsMain(ChannelSelectionBase):
 		else:
 			self["service"].text = _("Search complete")
 			self["scanned_service"].text = ""
+			self["key_red"].text = _("Exit")
 			self.services_count = -1  # Marks search complete
 
 	@staticmethod
@@ -268,7 +271,7 @@ class FreeChannelsMain(ChannelSelectionBase):
 	def start_scan(self, answer):
 		if answer:
 			self.title = _("Search for free channels")
-			self["key_red"].text = _("Exit")
+			self["key_red"].text = _("Stop")
 			self["key_green"].text = ""
 			self["key_yellow"].text = ""
 			self["key_blue"].text = ""
