@@ -125,23 +125,24 @@ class FreeChannelsMain(ChannelSelectionBase):
 
 	@staticmethod
 	def get_services(ref):
-		services = []
 		servicelist = eServiceCenter.getInstance().list(ref)
-		if servicelist:
-			while True:
-				service = servicelist.getNext()
-				if not service.valid():
+		if not servicelist:
+			return []
+		services = []
+		while True:
+			service = servicelist.getNext()
+			if not service.valid():
+				break
+			if service.flags & (eServiceReference.isDirectory | eServiceReference.isMarker):
+				continue
+			name = eServiceCenter.getInstance().info(service).getName(service)
+			if not name or name == ".":
+				continue
+			for n in (" SID 0X", "(...)", "TEST ", " TEST"):
+				if n in name.upper():
 					break
-				if service.flags & (eServiceReference.isDirectory | eServiceReference.isMarker):
-					continue
-				name = eServiceCenter.getInstance().info(service).getName(service)
-				if not name or name == ".":
-					continue
-				for n in (" SID 0X", "(...)", "TEST ", " TEST"):
-					if n in name.upper():
-						break
-				else:
-					services.append((name, service))
+			else:
+				services.append((name, service))
 		if "ORDER BY bouquet" not in ref.toString():
 			services.sort(key=lambda x: x[0])
 		return [s[1] for s in services]
