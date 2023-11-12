@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/License-GPLv3-green.svg)](https://github.com/Taapat/enigma2-plugin-freechannels/blob/master/LICENSE)  [![](https://img.shields.io/github/downloads/Taapat/enigma2-plugin-freechannels/total)](https://github.com/Taapat/enigma2-plugin-freechannels/releases)  [![](https://img.shields.io/github/v/release/Taapat/enigma2-plugin-freechannels)](https://github.com/Taapat/enigma2-plugin-freechannels/releases)
+[![](https://img.shields.io/badge/License-GPLv3-green.svg)](https://github.com/Taapat/enigma2-plugin-freechannels/blob/master/LICENSE)  [![](https://sonarcloud.io/api/project_badges/measure?project=Taapat_enigma2-plugin-freechannels&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Taapat_enigma2-plugin-freechannels)  [![](https://img.shields.io/github/downloads/Taapat/enigma2-plugin-freechannels/total)](https://github.com/Taapat/enigma2-plugin-freechannels/releases)  [![](https://img.shields.io/github/v/release/Taapat/enigma2-plugin-freechannels)](https://github.com/Taapat/enigma2-plugin-freechannels/releases)
 -------
 Enigma2 plugin Free channels
 =========
