@@ -107,6 +107,10 @@ class FreeChannelsMain(ChannelSelectionBase):
 		if not self.services_list:
 			ChannelSelectionBase.showFavourites(self)
 
+	def compileTitle(self):
+		if not self.services_list:
+			self.setTitle("%s%s%s%s" % (self.maintitle, self.modetitle, self.functiontitle, self.servicetitle))
+
 	def open_menu(self):
 		self.session.open(FreeChannelsSetup)
 
